@@ -19,11 +19,11 @@ package recursion;
 import java.math.BigDecimal;
 
 /**
- * An example of tail recursion.
+ * An example of recursion.
  *
- * @author maartenl
+ * @author mrbear
  */
-public class TailRecursion
+public class NoRecursion
 {
 
     /**
@@ -34,23 +34,18 @@ public class TailRecursion
      */
     public static BigDecimal factorial(BigDecimal n)
     {
-
-        return factorial(BigDecimal.ONE, n);
-    }
-
-    /**
-     * Computes the factorial of a number n with an accumulator.
-     *
-     * @param n
-     * @return n!
-     */
-    private static BigDecimal factorial(BigDecimal accumulator, BigDecimal n)
-    {
         if (BigDecimal.ZERO.equals(n))
         {
             return BigDecimal.ONE;
         }
-        return factorial(accumulator.multiply(n), n.subtract(BigDecimal.ONE));
+        BigDecimal result = BigDecimal.ONE;
+        BigDecimal counter = BigDecimal.ONE;
+        while (counter.compareTo(n) <= 0)
+        {
+            result = result.multiply(counter);
+            counter = counter.add(BigDecimal.ONE);
+        }
+        return result;
     }
 
 }
