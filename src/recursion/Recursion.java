@@ -41,20 +41,4 @@ public class Recursion
         return n.multiply(factorial(n.subtract(BigDecimal.ONE)));
     }
 
-    /**
-     * Main method.
-     *
-     * @param args the command line arguments
-     */
-    public static void main(String[] args)
-    {
-        if (args.length != 1)
-        {
-            System.out.println("java -cp . Recursion <non-negative integer to compute the factorial of>");
-            System.exit(1);
-        }
-        BigDecimal entry = new BigDecimal(args[0]);
-        System.out.println(factorial(entry));
-    }
-
 }
