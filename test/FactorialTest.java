@@ -156,9 +156,6 @@ public class FactorialTest
             },
             {
                 new BigDecimal("14842907"), new BigDecimal("0000")
-            },
-            {
-                new BigDecimal("10100"), new BigDecimal("1")
             }
         });
     }
