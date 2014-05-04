@@ -24,8 +24,9 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 /**
+ * Test to make sure the Universe is okay.
  *
- * @author maartenl
+ * @author mrbear
  */
 public class DefaultTest
 {

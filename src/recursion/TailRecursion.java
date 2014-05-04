@@ -21,7 +21,8 @@ import java.math.BigDecimal;
 /**
  * An example of tail recursion.
  *
- * @author maartenl
+ * @see https://wiki.openjdk.java.net/display/mlvm/TailCalls
+ * @author mrbear
  */
 public class TailRecursion
 {
@@ -48,8 +49,11 @@ public class TailRecursion
     {
         if (BigDecimal.ZERO.equals(n))
         {
-            return BigDecimal.ONE;
+            return accumulator;
         }
+        // currently tail recursion is not optimised in Java, therefore the StackOverflow
+        // exception will occur here, the same as in the Recursion class.
+        // see for more information: https://wiki.openjdk.java.net/display/mlvm/TailCalls
         return factorial(accumulator.multiply(n), n.subtract(BigDecimal.ONE));
     }
 

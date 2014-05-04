@@ -30,6 +30,7 @@ import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 import recursion.NoRecursion;
 import recursion.Recursion;
+import recursion.TailRecursion;
 
 /**
  * Testing the factorial function in class Recursion.
@@ -167,6 +168,7 @@ public class FactorialTest
     {
     }
 
+    @Test
     public void factorialWithRecursionTest()
     {
         final BigDecimal factorial = Recursion.factorial(number);
@@ -182,4 +184,11 @@ public class FactorialTest
         assertThat("factorial of " + number + " should be " + expectedFactorial + " but was " + factorial, factorial, equalTo(expectedFactorial));
     }
 
+    @Test
+    public void factorialWithTailRecursionTest()
+    {
+        final BigDecimal factorial = TailRecursion.factorial(number);
+        System.out.println("Factorial of Number " + number + " is " + factorial);
+        assertThat("factorial of " + number + " should be " + expectedFactorial + " but was " + factorial, factorial, equalTo(expectedFactorial));
+    }
 }
