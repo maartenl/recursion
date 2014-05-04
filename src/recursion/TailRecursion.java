@@ -54,6 +54,8 @@ public class TailRecursion
         // currently tail recursion is not optimised in Java, therefore the StackOverflow
         // exception will occur here, the same as in the Recursion class.
         // see for more information: https://wiki.openjdk.java.net/display/mlvm/TailCalls
+        // so the future syntax could become:
+        // return goto factorial(accumulator.multiply(n), n.subtract(BigDecimal.ONE));
         return factorial(accumulator.multiply(n), n.subtract(BigDecimal.ONE));
     }
 
